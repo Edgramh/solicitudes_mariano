@@ -1,0 +1,588 @@
+=== NUEVA PETICIÓN 2025-11-12 13:46:02 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba de formulario
+    [monto_total] => 16770
+    [adjuntarCotizacionCheckbox] => on
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"9990","subtotal":"9990"},{"cantidad":"1","descripcion":"Otro producto","valor_unitario":"6780","subtotal":"6780"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => PDF Cotización de Prueba.pdf
+                )
+
+            [type] => Array
+                (
+                    [0] => application/pdf
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/php2cB85f
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 31376
+                )
+
+        )
+
+)
+
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'beneficiario' in 'INSERT INTO'
+=== NUEVA PETICIÓN 2025-11-12 13:50:20 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba de formulario
+    [monto_total] => 16770
+    [adjuntarCotizacionCheckbox] => on
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"9990","subtotal":"9990"},{"cantidad":"1","descripcion":"Otro producto","valor_unitario":"6780","subtotal":"6780"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => PDF Cotización de Prueba.pdf
+                )
+
+            [type] => Array
+                (
+                    [0] => application/pdf
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phplU5o2Z
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 31376
+                )
+
+        )
+
+)
+
+=== NUEVA PETICIÓN 2025-11-12 13:58:05 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba de Formulario
+    [monto_total] => 6900
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"6900","subtotal":"6900"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== NUEVA PETICIÓN 2025-11-12 14:00:46 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 6990
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"6990","subtotal":"6990"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== NUEVA PETICIÓN 2025-11-12 14:15:27 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 5678
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"5678","subtotal":"5678"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== NUEVA PETICIÓN 2025-11-12 15:29:44 ===
+POST: Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 6789
+    [adjuntarCotizacionCheckbox] => on
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba 1","valor_unitario":"6789","subtotal":"6789"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => PDF Cotización de Prueba 2.pdf
+                )
+
+            [type] => Array
+                (
+                    [0] => application/pdf
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phpZyfj4C
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 31376
+                )
+
+        )
+
+)
+
+=== NUEVA PETICIÓN 2025-11-12 15:34:02 ===
+POST: Array
+(
+    [nombre_completo] => asdasd
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-13
+    [proposito] => asdasd
+    [monto_total] => 5756
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"asdasd","valor_unitario":"5756","subtotal":"5756"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== PETICIÓN 2025-11-12 15:37:31 ===
+POST: Array
+(
+    [nombre_completo] => asdasdas
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => sdfsdfds
+    [monto_total] => 5675
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"fsdfsdf","valor_unitario":"5675","subtotal":"5675"}]
+)
+
+FILES: Array
+(
+    [cotizaciones] => Array
+        (
+            [name] => Array
+                (
+                    [0] => 
+                )
+
+            [type] => Array
+                (
+                    [0] => 
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => 
+                )
+
+            [error] => Array
+                (
+                    [0] => 4
+                )
+
+            [size] => Array
+                (
+                    [0] => 0
+                )
+
+        )
+
+)
+
+=== 2025-11-12 15:51:02 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 9900
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [payload] => {"nombre_solicitante":"Edgardo Mendoza","correo_solicitante":"informatica@colegiomariano.cl","unidad":"Administración y Finanzas","tipo_solicitud":"Compra","area_ccosto":"Informática","fecha_limite":"2025-11-14","detalle":"Prueba","monto":"9900","articulos":[{"cantidad":"1","descripcion":"Prueba","valor_unitario":"9900","subtotal":"9900"}],"beneficiario":"","rut":"","banco":"","tipo_cuenta":"","numero_cuenta":"","correo_beneficiario":""}
+)
+
+=== 2025-11-12 15:56:14 ===
+Array
+(
+    [nombre_completo] => Edgardo M
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 2567
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Prueba","valor_unitario":"2567","subtotal":"2567"}]
+)
+
+=== 2025-11-13 11:23:19 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba form
+    [monto_total] => 9876
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"prueba","valor_unitario":"9876","subtotal":"9876"}]
+)
+
+=== 2025-11-13 12:05:56 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-21
+    [proposito] => Prueba de formulario
+    [monto_total] => 15308
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"2","descripcion":"Detalles de prueba","valor_unitario":"7654","subtotal":"15308"}]
+)
+
+=== 2025-11-13 12:11:03 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-21
+    [proposito] => Prueba de formulario
+    [monto_total] => 15308
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"2","descripcion":"Detalles de prueba","valor_unitario":"7654","subtotal":"15308"}]
+)
+
+=== 2025-11-13 12:16:59 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba
+    [monto_total] => 11970
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"3","descripcion":"Prueba","valor_unitario":"3990","subtotal":"11970"}]
+)
+
+=== 2025-11-13 12:20:28 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-14
+    [proposito] => Prueba de formluario
+    [monto_total] => 19752
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"2","descripcion":"Detalles del form","valor_unitario":"9876","subtotal":"19752"}]
+)
+
+=== 2025-11-13 12:27:17 ===
+Array
+(
+    [nombre_completo] => Edgardo Mendoza
+    [email] => informatica@colegiomariano.cl
+    [departamento] => Administración y Finanzas
+    [tipo_solicitud] => Compra
+    [area_ccosto] => Informática
+    [fecha_limite] => 2025-11-21
+    [proposito] => Prueba de formulario
+    [monto_total] => 9876
+    [nombre_bancario] => 
+    [rut] => 
+    [banco] => 
+    [tipo_cuenta] => 
+    [cuenta] => 
+    [email_bancario] => 
+    [articulos] => [{"cantidad":"1","descripcion":"Detalles","valor_unitario":"9876","subtotal":"9876"}]
+)
+

@@ -1,0 +1,15 @@
+# === COLEGIO MARIANO - SISTEMA INTERNO - BLOQUEO TOTAL DE INDEXACIÓN ===
+User-agent: *
+Disallow: /
+
+# Bloqueo extra para los más insistentes
+User-agent: Googlebot
+Disallow: /
+User-agent: Bingbot
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+User-agent: Baiduspider
+Disallow: /
+
+Sitemap: 

@@ -1,0 +1,45 @@
+[12-Nov-2025 13:50:21 America/Santiago] Error correo a informatica@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 13:50:21 America/Santiago] Error correo a jburrowso@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 13:50:22 America/Santiago] Error correo a compras@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 13:58:06 America/Santiago] Error correo a informatica@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 13:58:06 America/Santiago] Error correo a jburrowso@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 13:58:06 America/Santiago] Error correo a compras@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[12-Nov-2025 14:03:31 America/Santiago] Error correo a informatica@colegiomariano.cl: SMTP Error: Could not connect to SMTP host.
+[12-Nov-2025 14:15:27 America/Santiago] Error correo a informatica@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[12-Nov-2025 14:15:27 America/Santiago] Error correo a jburrowso@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[12-Nov-2025 14:15:27 America/Santiago] Error correo a compras@colegiomariano.cl: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[12-Nov-2025 15:29:44 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function str_ends_with() in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 48
+[12-Nov-2025 15:34:02 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function str_ends_with() in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php:48
+Stack trace:
+#0 {main}
+  thrown in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 48
+[12-Nov-2025 15:37:31 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function str_ends_with() in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php:46
+Stack trace:
+#0 {main}
+  thrown in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 46
+[12-Nov-2025 15:51:02 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function str_ends_with() in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 28
+[12-Nov-2025 15:56:14 America/Santiago] PHP Fatal error:  Uncaught Error: Call to undefined function str_ends_with() in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 28
+[13-Nov-2025 11:23:19 America/Santiago] Correo falló: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[13-Nov-2025 12:05:56 America/Santiago] Correo falló: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[13-Nov-2025 12:11:05 America/Santiago] Correo falló: SMTP Error: Could not authenticate.
+[13-Nov-2025 12:17:01 America/Santiago] Correo falló: SMTP Error: Could not authenticate.
+[13-Nov-2025 12:20:30 America/Santiago] Correo falló: SMTP Error: Could not authenticate.
+[13-Nov-2025 15:05:15 America/Santiago] PHP Warning:  Undefined variable $html_solicitante in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 190
+[13-Nov-2025 15:05:15 America/Santiago] ERROR solicitante: Message body empty
+[13-Nov-2025 15:05:15 America/Santiago] PHP Warning:  Undefined variable $html_jefe in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 200
+[13-Nov-2025 15:05:15 America/Santiago] ERROR jefe (jburrowso@colegiomariano.cl): Message body empty
+[13-Nov-2025 15:05:15 America/Santiago] PHP Warning:  Undefined variable $html_compras in /home/coleg115/public_html/solicitudes.colegiomariano.cl/procesar.php on line 208
+[13-Nov-2025 15:05:15 America/Santiago] ERROR compras: Message body empty
+[13-Nov-2025 17:41:43 America/Santiago] Error correo solicitante: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[13-Nov-2025 17:41:43 America/Santiago] Error correo compras: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`*.pymedns.net' did not match expected CN=`smtp.gmail.com'
+[14-Nov-2025 11:03:42 America/Santiago] Error envío notificación (Rechazada): SMTP Error: Could not authenticate.
+[14-Nov-2025 11:04:18 America/Santiago] Error envío notificación (Aprobada): SMTP Error: Could not authenticate.

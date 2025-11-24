@@ -1,0 +1,38 @@
+# === SISTEMA DE SOLICITUDES - .htaccess ===
+AddDefaultCharset UTF-8
+Options -Indexes
+RewriteEngine On
+
+# === 1. PERMITIR ARCHIVOS ESTÁTICOS Y CARPETAS ESPECÍFICAS ===
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|svg|webp|ico|pdf|css|js|woff|woff2|ttf|eot)$ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_URI} ^/assets/ [NC]
+RewriteRule ^ - [L]
+RewriteCond %{REQUEST_URI} ^/img/ [NC]
+RewriteRule ^ - [L]
+RewriteCond %{REQUEST_URI} ^/pdfs/ [NC]
+RewriteRule ^ - [L]
+RewriteCond %{REQUEST_URI} ^/cotizaciones/ [NC]
+RewriteRule ^ - [L]
+
+# === 2. URLs AMIGABLES (Rutas secretas) ===
+RewriteRule ^$ index.html [L]
+RewriteRule ^inicio-cm/?$ login.php [L]
+RewriteRule ^acceso-cm/?$ admin.php [L]
+RewriteRule ^gestion-cm/([A-Z0-9]{8})/?$ aprobar.php?codigo=$1 [L,QSA]
+RewriteRule ^exportar-cm/?$ exportar.php [L,QSA]
+
+# === 3. BLOQUEAR ACCESO DIRECTO A .PHP (EXCEPTO POST A procesar.php) ===
+RewriteCond %{REQUEST_METHOD} GET
+RewriteCond %{THE_REQUEST} \s/+procesar\.php[\s?] [NC]
+RewriteRule ^ - [R=404,L]
+
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} \s/+(.+?\.php)\s [NC]
+RewriteCond %{REQUEST_URI} !^/procesar\.php$ [NC]
+RewriteRule ^ - [R=404,L]
+
+# === 4. PÁGINA 404 PERSONALIZADA ===
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html

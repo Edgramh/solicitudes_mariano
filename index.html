@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <base target="_top">
+  <title>Solicitud de Compra/Reembolso</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='4' ry='4' fill='%2310b981'/><path fill='%23ffffff' d='M3 3.5h10a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5zm.5 1v1h9V4.5h-9zm0 2v1h9V6.5h-9zm0 2v1h5V8.5h-5zm0 2v1h3v-1h-3z'/></svg>" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='4' ry='4' fill='%2310b981'/><path fill='%23ffffff' d='M3 3.5h10a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5zm.5 1v1h9V4.5h-9zm0 2v1h9V6.5h-9zm0 2v1h5V8.5h-5zm0 2v1h3v-1h-3z'/></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <!-- BLOQUEO TOTAL DE INDEXACIÓN Y CACHÉ -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, notranslate, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #10b981;
+      --primary-green-dark: #059669;
+      --primary-green-light: #34d399;
+      --secondary-green: #6ee7b7;
+      --accent-green: #a7f3d0;
+      --success-green: #065f46;
+      --bg-green: #ecfdf5;
+      --border-green: #d1fae5;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --text-light: #9ca3af;
+      --white: #ffffff;
+      --shadow-light: rgba(16, 185, 129, 0.1);
+      --shadow-medium: rgba(16, 185, 129, 0.2);
+      --gradient-primary: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+      --gradient-bg: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--gradient-bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(167, 243, 208, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .main-container { 
+      max-width: 1200px; margin: 0 auto; padding: 2rem 1rem 0rem 1rem; position: relative; z-index: 1; 
+      flex: 1;
+    }
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border-green);
+      border-radius: 24px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px var(--shadow-light);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+      background: var(--gradient-primary);
+    }
+    .form-title {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .form-subtitle { color: var(--text-muted); font-size: 1.1rem; font-weight: 500; margin-bottom: 0; }
+    .logo-img {
+      height: 80px; width: auto; object-fit: contain; margin-bottom: 1.5rem;
+    }
+    .section-title {
+      color: var(--text-dark); font-weight: 600; font-size: 1.1rem;
+      margin: 2.5rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent-green);
+      position: relative;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px;
+      background: var(--primary-green);
+    }
+    .form-label {
+      font-weight: 600; color: var(--text-dark); margin-bottom: 0.75rem;
+      font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .form-label i { color: var(--primary-green); font-size: 1rem; }
+    .form-control, .form-select {
+      border: 2px solid #e5e7eb; border-radius: 12px; padding: 0.875rem 1.25rem;
+      font-size: 1rem; font-weight: 500; transition: all 0.3s ease;
+      background-color: var(--white); color: var(--text-dark);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--primary-green); box-shadow: 0 0 0 3px var(--shadow-light), 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      background-color: var(--white); transform: translateY(-1px);
+    }
+    .btn-primary {
+      background: var(--gradient-primary); border: none; border-radius: 16px;
+      padding: 1rem 3rem; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      box-shadow: 0 10px 15px -3px var(--shadow-medium), 0 4px 6px -2px var(--shadow-light);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--primary-green-dark) 0%, #047857 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px var(--shadow-medium), 0 10px 10px -5px var(--shadow-light);
+    }
+    .item-row {
+      background-color: var(--bg-green); border-radius: 12px; padding: 1.5rem;
+      margin-bottom: 1.5rem; border: 1px solid var(--border-green); position: relative;
+    }
+    .remove-item-btn {
+      position: absolute; top: 10px; right: 10px; background: none; border: none;
+      color: #ef4444; font-size: 1.5rem; opacity: 0.7; transition: opacity 0.2s;
+    }
+    .remove-item-btn:hover { opacity: 1; }
+    .total-summary {
+      font-size: 1.25rem; font-weight: 700; color: var(--success-green);
+      padding-top: 1rem; border-top: 2px dashed var(--accent-green); margin-top: 1rem;
+    }
+    .btn-secondary-green {
+      background-color: var(--secondary-green); color: var(--success-green);
+      border: 1px solid var(--primary-green); border-radius: 12px;
+      padding: 0.75rem 1.5rem; font-weight: 600; transition: all 0.3s ease;
+    }
+    .btn-secondary-green:hover {
+      background-color: var(--primary-green-light); color: var(--white);
+      border-color: var(--primary-green-dark);
+    }
+    .required-asterisk { color: #ef4444; }
+    .file-list { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
+    .file-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; background: var(--bg-green); border-radius: 12px; margin-bottom: 0.5rem; }
+    .file-remove { color: #ef4444; cursor: pointer; font-weight: bold; font-size: 1.1rem; }
+    .file-preview { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-green); }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 0.5rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: auto;
+    }
+    .footer small {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    /* SPINNER ANIMADO */
+    #loadingOverlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.97);
+      display: none; align-items: center; justify-content: center;
+      z-index: 9999; opacity: 0; transition: opacity 0.4s ease;
+      flex-direction: column; gap: 1.5rem;
+    }
+    #loadingOverlay.show { display: flex; opacity: 1; }
+
+    .spinner {
+      width: 70px; height: 70px;
+      border: 7px solid #f3f3f3;
+      border-top: 7px solid var(--primary-green);
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    #loadingMessage {
+      min-height: 40px;
+      position: relative;
+      width: 100%;
+      text-align: center;
+    }
+
+    .msg {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--primary-green);
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+      width: max-content;
+      white-space: nowrap;
+    }
+    .msg.active {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OVERLAY DE CARGA ANIMADO -->
+  <div id="loadingOverlay">
+    <div class="d-flex flex-column align-items-center">
+      <div class="spinner"></div>
+      <div id="loadingMessage">
+        <span class="msg active" data-msg="Procesando solicitud...">Procesando solicitud...</span>
+        <span class="msg" data-msg="Enviando correos de notificación...">Enviando correos de notificación...</span>
+        <span class="msg" data-msg="¡Ya casi terminamos!">¡Ya casi terminamos!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="form-card">
+      <div class="header-section text-center mb-5">
+        <!-- LOGO DEL COLEGIO -->
+        <img src="/assets/img/logo-colegio.png" alt="Logo Colegio Mariano de Schoenstatt" class="logo-img mx-auto">
+        <h1 class="form-title">Solicitud de Compra y Reembolso</h1>
+        <p class="form-subtitle">Completa el formulario para iniciar tu solicitud. Los campos con <span class="required-asterisk">*</span> son obligatorios.</p>
+      </div>
+
+      <form id="applicationForm" novalidate enctype="multipart/form-data" autocomplete="off">
+        <!-- === INFORMACIÓN DEL SOLICITANTE === -->
+        <div class="form-section">
+          <h3 class="section-title">Información del Solicitante</h3>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="nombre_completo" class="form-label">Nombre Completo<span class="required-asterisk">*</span></label>
+              <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" required placeholder="Ingresa tu nombre y apellido">
+              <div class="invalid-feedback">Por favor ingresa tu nombre y apellido.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Correo Electrónico<span class="required-asterisk">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" required placeholder="usuario@colegiomariano.cl" pattern=".+@colegiomariano\.cl$" oninput="validarDominio(this)">
+              <div class="invalid-feedback">El correo debe ser del dominio @colegiomariano.cl</div>
+            </div>
+            <div class="col-12">
+              <label for="departamento" class="form-label">Área o Departamento<span class="required-asterisk">*</span></label>
+              <select class="form-select" id="departamento" name="departamento" required>
+                <option value="">Selecciona un área</option>
+                <option value="Dirección General y Apoyo">Dirección General y Apoyo</option>
+                <option value="Dirección Académica">Dirección Académica</option>
+                <option value="Dirección de Formación">Dirección de Formación</option>
+                <option value="Administración y Finanzas">Administración y Finanzas</option>
+              </select>
+              <div class="invalid-feedback">Por favor selecciona un área.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === DETALLES GENERALES === -->
+        <div class="form-section">
+          <h3 class="section-title">Detalles Generales</h3>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <label for="tipo_solicitud" class="form-label">Tipo de Solicitud<span class="required-asterisk">*</span></label>
+              <select class="form-select" id="tipo_solicitud" name="tipo_solicitud" required>
+                <option value="">Seleccione</option>
+                <option value="Compra">Compra</option>
+                <option value="Reembolso">Reembolso</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="area_ccosto" class="form-label">Centro de Costo<span class="required-asterisk">*</span></label>
+              <select class="form-select" id="area_ccosto" name="area_ccosto" required>
+                <option value="">Selecciona un Área primero</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="fecha_limite" class="form-label">Fecha Límite<span class="required-asterisk">*</span></label>
+              <input type="date" class="form-control" id="fecha_limite" name="fecha_limite" required>
+              <div class="invalid-feedback">Por favor selecciona una fecha límite.</div>
+            </div>
+            <div class="col-12">
+              <label for="proposito" class="form-label">Justificación<span class="required-asterisk">*</span></label>
+              <textarea class="form-control" id="proposito" name="proposito" rows="3" required placeholder="Describe brevemente el propósito..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- === ARTÍCULOS === -->
+        <div class="form-section">
+          <h3 class="section-title">Artículos Solicitados</h3>
+          <div id="articulos-container">
+            <div class="item-row" data-index="1">
+              <button type="button" class="remove-item-btn" aria-label="Eliminar">X</button>
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <label class="form-label">Cantidad<span class="required-asterisk">*</span></label>
+                  <input type="number" step="1" min="1" class="form-control item-input" id="cantidad_1" required placeholder="1">
+                </div>
+                <div class="col-md-5">
+                  <label class="form-label">Descripción<span class="required-asterisk">*</span></label>
+                  <input type="text" class="form-control" id="articulo_descripcion_1" required placeholder="Detalles del producto">
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label">Valor Unit.<span class="required-asterisk">*</span></label>
+                  <input type="text" class="form-control item-input" id="valor_unitario_1" required placeholder="0">
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label">Subtotal</label>
+                  <input type="text" class="form-control" id="monto_unitario_1" readonly value="0" style="background:#f1f5f9; font-weight:600;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12 text-center">
+              <button type="button" class="btn btn-secondary-green" id="addItemBtn">Añadir Otro Artículo</button>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12 text-end total-summary">
+              Monto Total Estimado: <span id="monto_total_display">$0</span>
+              <input type="hidden" id="monto_total" name="monto_total" value="0">
+            </div>
+          </div>
+        </div>
+
+        <!-- === COTIZACIÓN (MÚLTIPLES PDFs) === -->
+        <div class="form-section">
+          <h3 class="section-title">Cotización o Presupuesto</h3>
+          <div class="row g-4">
+            <div class="col-md-12">
+              <label class="form-label">
+                <input type="checkbox" id="adjuntarCotizacionCheckbox" name="adjuntarCotizacionCheckbox">
+                Adjuntar cotizaciones o facturas en PDF o imágenes (máx. 5 archivos)
+              </label>
+              <div id="cotizacionFileSection" style="display:none; margin-top:0.75rem;">
+                <div id="fileList" class="file-list mt-3"></div>
+                <div class="mt-3">
+                  <button type="button" id="addMoreFilesBtn" class="btn btn-outline-success btn-sm">
+                    <i class="bi bi-plus-circle"></i> Añade un archivo aquí
+                  </button>
+                  <input type="file" id="cotizacionesInput" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+                  <input type="hidden" name="cotizaciones[]" id="hiddenFileInput">
+                </div>
+                <div class="form-text mt-2">
+                  Puedes adjuntar hasta 5 archivos: PDF, JPG, JPEG o PNG.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === REEMBOLSO === -->
+        <div class="form-section" id="reembolso-section" style="display: none;">
+          <h3 class="section-title">Datos para el Reembolso</h3>
+          <div class="row g-4">
+            <div class="col-md-6"><label for="nombre_bancario" class="form-label">Titular<span class="required-asterisk">*</span></label><input type="text" class="form-control" id="nombre_bancario" name="nombre_bancario"></div>
+            <div class="col-md-6"><label for="rut" class="form-label">RUT<span class="required-asterisk">*</span></label><input type="text" class="form-control" id="rut" name="rut"></div>
+            <div class="col-md-4"><label for="banco" class="form-label">Banco<span class="required-asterisk">*</span></label><input type="text" class="form-control" id="banco" name="banco"></div>
+            <div class="col-md-4"><label for="tipo_cuenta" class="form-label">Tipo<span class="required-asterisk">*</span></label>
+              <select class="form-select" id="tipo_cuenta" name="tipo_cuenta">
+                <option value="">Selecciona</option>
+                <option value="Corriente">Corriente</option>
+                <option value="Ahorro">Ahorro</option>
+                <option value="Vista">Vista</option>
+              </select>
+            </div>
+            <div class="col-md-4"><label for="cuenta" class="form-label">Nº Cuenta<span class="required-asterisk">*</span></label><input type="text" class="form-control" id="cuenta" name="cuenta" pattern="[0-9]+"></div>
+            <div class="col-12"><label for="email_bancario" class="form-label">Email Notificación<span class="required-asterisk">*</span></label><input type="email" class="form-control" id="email_bancario" name="email_bancario"></div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+              Enviar Solicitud
+            </button>
+          </div>
+        </div>
+      </form>
+      <div id="messageDiv"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    Sistema de Solicitudes de Compra/Reembolso - Colegio Mariano de Schoenstatt
+    <small>Desarrollado por Edgardo Mendoza</small>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // === TU CÓDIGO JS COMPLETO (sin cambios) ===
+    const form = document.getElementById('applicationForm');
+    const submitButton = document.getElementById('submitBtn');
+    const messageDiv = document.getElementById('messageDiv');
+    const articulosContainer = document.getElementById('articulos-container');
+    const addItemBtn = document.getElementById('addItemBtn');
+    const tipoSolicitudSelect = document.getElementById('tipo_solicitud');
+    const departamentoSelect = document.getElementById('departamento');
+    const areaCcostoSelect = document.getElementById('area_ccosto');
+    const reembolsoSection = document.getElementById('reembolso-section');
+    const montoTotalDisplay = document.getElementById('monto_total_display');
+    const montoTotalInput = document.getElementById('monto_total');
+    const adjuntarCotizacionCheckbox = document.getElementById('adjuntarCotizacionCheckbox');
+    const cotizacionFileSection = document.getElementById('cotizacionFileSection');
+    const fileList = document.getElementById('fileList');
+    const addMoreFilesBtn = document.getElementById('addMoreFilesBtn');
+    const cotizacionesInput = document.getElementById('cotizacionesInput');
+    const hiddenFileInput = document.getElementById('hiddenFileInput');
+    let itemCounter = 1;
+    let uploadedFiles = new DataTransfer();
+
+    const COST_CENTERS = {
+        "Dirección General y Apoyo": ["Admisión", "Secretaría", "Comunicaciones"],
+        "Dirección Académica": ["Ciclo Inicial", "Ciclo Básico", "Ciclo Mayor", "Inclusión", "Convivencia Escolar", "Biblioteca", "Enfermería"],
+        "Dirección de Formación": ["Asuntos Estudiantiles", "Pastoral", "Capellanía"],
+        "Administración y Finanzas": ["Servicios Generales", "RR.HH.", "Informática", "Administrativos"]
+    };
+
+    function showMessage(msg, type = 'info') {
+        messageDiv.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show mt-4" role="alert">${msg}<button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>`;
+        messageDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function validateField(field) {
+        if (!field.checkValidity()) {
+            field.classList.add('is-invalid'); field.classList.remove('is-valid'); return false;
+        } else {
+            field.classList.remove('is-invalid'); field.classList.add('is-valid'); return true;
+        }
+    }
+
+    function validarDominio(input) {
+        const valor = input.value.trim();
+        const esValido = /.+@colegiomariano\.cl$/i.test(valor);
+        if (valor === '') {
+            input.setCustomValidity('');
+            input.classList.remove('is-invalid', 'is-valid');
+        } else if (esValido) {
+            input.setCustomValidity('');
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        } else {
+            input.setCustomValidity('Dominio inválido');
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+        }
+    }
+
+    function updateCostCenters() {
+        const dep = departamentoSelect.value;
+        areaCcostoSelect.innerHTML = '<option value="">Selecciona un Centro de Costo</option>';
+        if (COST_CENTERS[dep]) {
+            COST_CENTERS[dep].forEach(cc => {
+                const opt = document.createElement('option');
+                opt.value = cc; opt.textContent = cc;
+                areaCcostoSelect.appendChild(opt);
+            });
+            areaCcostoSelect.disabled = false;
+        } else {
+            areaCcostoSelect.disabled = true;
+        }
+    }
+
+    function formatNumber(num) {
+        const n = Math.round(parseFloat(num) || 0);
+        return n.toLocaleString('es-CL', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+
+    function parseInputValue(input) {
+        return input.value.replace(/\./g, '').replace(/,/g, '.');
+    }
+
+    function updateAllTotals() {
+        let total = 0;
+        document.querySelectorAll('.item-row').forEach(row => {
+            const idx = row.dataset.index;
+            const cant = parseInt(document.getElementById(`cantidad_${idx}`).value) || 0;
+            const valStr = parseInputValue(document.getElementById(`valor_unitario_${idx}`));
+            const val = Math.round(parseFloat(valStr) || 0);
+            const sub = cant * val;
+            total += sub;
+            document.getElementById(`valor_unitario_${idx}`).value = formatNumber(val);
+            document.getElementById(`monto_unitario_${idx}`).value = formatNumber(sub);
+        });
+        montoTotalDisplay.textContent = `$${formatNumber(total)}`;
+        montoTotalInput.value = total;
+    }
+
+    function createItemRow() {
+        itemCounter++;
+        const idx = itemCounter;
+        const row = document.createElement('div');
+        row.className = 'item-row'; row.dataset.index = idx;
+        row.innerHTML = `
+            <button type="button" class="remove-item-btn" aria-label="Eliminar">X</button>
+            <div class="row g-4">
+                <div class="col-md-3"><label class="form-label">Cantidad<span class="required-asterisk">*</span></label>
+                    <input type="number" step="1" min="1" class="form-control item-input" id="cantidad_${idx}" required placeholder="1">
+                </div>
+                <div class="col-md-5"><label class="form-label">Descripción<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control" id="articulo_descripcion_${idx}" required placeholder="Detalles del producto">
+                </div>
+                <div class="col-md-2"><label class="form-label">Valor Unit.<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control item-input" id="valor_unitario_${idx}" required placeholder="0">
+                </div>
+                <div class="col-md-2"><label class="form-label">Subtotal</label>
+                    <input type="text" class="form-control" id="monto_unitario_${idx}" readonly value="0" style="background:#f1f5f9; font-weight:600;">
+                </div>
+            </div>
+        `;
+        articulosContainer.appendChild(row);
+        setupItemEvents(row);
+    }
+
+    function setupItemEvents(row) {
+        row.querySelectorAll('.item-input').forEach(i => {
+            i.addEventListener('input', updateAllTotals);
+            i.addEventListener('blur', function() {
+                validateField(this);
+                if (this.id.startsWith('valor_unitario_') && this.value) {
+                    const clean = parseInputValue(this);
+                    const val = Math.round(parseFloat(clean) || 0);
+                    this.value = formatNumber(val);
+                }
+                updateAllTotals();
+            });
+        });
+        row.querySelector('.remove-item-btn').addEventListener('click', () => {
+            if (articulosContainer.children.length > 1) {
+                row.remove(); updateAllTotals();
+            } else showMessage('Debe haber al menos un artículo.', 'danger');
+        });
+    }
+
+    function updateFileListDisplay() {
+        fileList.innerHTML = '';
+        if (uploadedFiles.files.length === 0) return;
+        for (let i = 0; i < uploadedFiles.files.length; i++) {
+            const file = uploadedFiles.files[i];
+            const div = document.createElement('div');
+            div.className = 'file-item';
+            let preview = '';
+            if (file.type.startsWith('image/')) {
+                const url = URL.createObjectURL(file);
+                preview = `<img src="${url}" class="file-preview" alt="preview">`;
+            } else {
+                preview = `<i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size:1.5rem;"></i>`;
+            }
+            div.innerHTML = `
+                ${preview}
+                <div class="flex-grow-1">
+                    <div><strong>${file.name}</strong></div>
+                    <small class="text-muted">${(file.size / 1024).toFixed(1)} KB</small>
+                </div>
+                <span class="file-remove" onclick="removeUploadedFile(${i})">×</span>
+            `;
+            fileList.appendChild(div);
+        }
+    }
+
+    window.removeUploadedFile = function(index) {
+        const dt = new DataTransfer();
+        for (let i = 0; i < uploadedFiles.files.length; i++) {
+            if (i !== index) dt.items.add(uploadedFiles.files[i]);
+        }
+        uploadedFiles = dt;
+        updateFileListDisplay();
+    };
+
+    addMoreFilesBtn?.addEventListener('click', () => {
+        cotizacionesInput.click();
+    });
+
+    cotizacionesInput?.addEventListener('change', function() {
+        const newFiles = this.files;
+        if (!newFiles.length) return;
+        const dt = new DataTransfer();
+        let added = 0;
+        for (let i = 0; i < uploadedFiles.files.length; i++) {
+            dt.items.add(uploadedFiles.files[i]);
+        }
+        for (let i = 0; i < newFiles.length; i++) {
+            if (dt.files.length >= 5) {
+                showMessage('Máximo 5 archivos permitidos.', 'warning');
+                break;
+            }
+            dt.items.add(newFiles[i]);
+            added++;
+        }
+        uploadedFiles = dt;
+        this.value = '';
+        updateFileListDisplay();
+        if (added > 0) {
+            showMessage(`Se añadieron ${added} archivo(s). Total: ${uploadedFiles.files.length}`, 'success');
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        updateCostCenters();
+        departamentoSelect.addEventListener('change', updateCostCenters);
+        setupItemEvents(articulosContainer.querySelector('.item-row'));
+        addItemBtn.addEventListener('click', createItemRow);
+        tipoSolicitudSelect.addEventListener('change', function() {
+            const show = this.value === 'Reembolso';
+            reembolsoSection.style.display = show ? 'block' : 'none';
+            reembolsoSection.querySelectorAll('input, select').forEach(f => {
+                f.required = show;
+                if (!show) f.classList.remove('is-invalid', 'is-valid');
+            });
+        });
+        adjuntarCotizacionCheckbox.addEventListener('change', function() {
+            const show = this.checked;
+            cotizacionFileSection.style.display = show ? 'block' : 'none';
+            if (!show) {
+                uploadedFiles = new DataTransfer();
+                updateFileListDisplay();
+            }
+        });
+        form.addEventListener('reset', () => {
+            setTimeout(() => {
+                uploadedFiles = new DataTransfer();
+                updateFileListDisplay();
+            }, 100);
+        });
+    });
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        let valid = true;
+        form.querySelectorAll('[required]').forEach(f => {
+            if (f.closest('#reembolso-section') && reembolsoSection.style.display === 'none') return;
+            if (f.id === 'cotizacionesInput' && !adjuntarCotizacionCheckbox.checked) return;
+            if (!validateField(f)) valid = false;
+        });
+        if (parseFloat(montoTotalInput.value) <= 0) {
+            valid = false;
+            showMessage('El monto total debe ser mayor a $0.', 'danger');
+        }
+        if (adjuntarCotizacionCheckbox.checked && uploadedFiles.files.length === 0) {
+            valid = false;
+            showMessage('Debes adjuntar al menos un archivo.', 'danger');
+        }
+        if (!valid) return;
+
+        const overlay = document.getElementById('loadingOverlay');
+        overlay.classList.add('show');
+
+        const messages = [
+            { text: 'Procesando solicitud...', delay: 0 },
+            { text: 'Enviando correos de notificación...', delay: 1800 },
+            { text: '¡Ya casi terminamos!', delay: 3600 }
+        ];
+
+        const spans = document.querySelectorAll('#loadingMessage .msg');
+        let currentIndex = 0;
+
+        spans.forEach(s => s.classList.remove('active'));
+
+        const showNext = () => {
+            if (currentIndex >= messages.length) return;
+            const msg = messages[currentIndex];
+            const span = spans[currentIndex];
+            setTimeout(() => {
+                if (currentIndex > 0) spans[currentIndex - 1].classList.remove('active');
+                span.textContent = msg.text;
+                span.classList.add('active');
+                currentIndex++;
+                showNext();
+            }, msg.delay);
+        };
+        showNext();
+
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Enviando...';
+
+        const articulos = [];
+        document.querySelectorAll('.item-row').forEach(row => {
+            const i = row.dataset.index;
+            const cantidad = parseInt(document.getElementById(`cantidad_${i}`).value) || 0;
+            const valorStr = parseInputValue(document.getElementById(`valor_unitario_${i}`));
+            const valor = Math.round(parseFloat(valorStr) || 0);
+            articulos.push({
+                cantidad: cantidad.toString(),
+                descripcion: document.getElementById(`articulo_descripcion_${i}`).value.trim(),
+                valor_unitario: valor.toString(),
+                subtotal: (cantidad * valor).toString()
+            });
+        });
+
+        const fd = new FormData(form);
+        fd.append('articulos', JSON.stringify(articulos));
+        for (let i = 0; i < uploadedFiles.files.length; i++) {
+            fd.append('cotizaciones[]', uploadedFiles.files[i]);
+        }
+
+        try {
+            const res = await fetch('/procesar.php', { method: 'POST', body: fd });
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(`HTTP ${res.status}: ${text}`);
+            }
+            const data = await res.json();
+            if (data.status === 'success') {
+                showMessage('¡Solicitud enviada con éxito! Recibirás un correo de confirmación con los detalles', 'success');
+                form.reset();
+                articulosContainer.innerHTML = '';
+                itemCounter = 1;
+                createItemRow();
+                updateAllTotals();
+                tipoSolicitudSelect.dispatchEvent(new Event('change'));
+                adjuntarCotizacionCheckbox.checked = false;
+                adjuntarCotizacionCheckbox.dispatchEvent(new Event('change'));
+                departamentoSelect.dispatchEvent(new Event('change'));
+                uploadedFiles = new DataTransfer();
+                updateFileListDisplay();
+            } else {
+                showMessage(data.message || 'Error del servidor', 'danger');
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            showMessage(`Error al enviar: ${err.message}`, 'danger');
+        } finally {
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.classList.remove('show'), 400);
+            }, 4500);
+
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Enviar Solicitud';
+        }
+    });
+  </script>
+</body>
+</html>
